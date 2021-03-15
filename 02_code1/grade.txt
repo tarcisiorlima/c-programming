@@ -1,14 +1,19 @@
-Grading at Mon Mar 15 01:06:08 UTC 2021
+Grading at Mon Mar 15 01:09:15 UTC 2021
 Checking code1.c for legal syntax
-temp.c: In function ‘max’:
-temp.c:5:14: error: ‘num’ undeclared (first use in this function)
-   if (num1 > num)
-              ^
-temp.c:5:14: note: each undeclared identifier is reported only once for each function it appears in
-temp.c:15:1: error: control reaches end of non-void function [-Werror=return-type]
- }
- ^
-cc1: all warnings being treated as errors
-The code did not have legal syntax!
+Checking for int max (int num1, int num2)
+Found on line 3, column 1 
+Checking for int main(void)
+Found on line 17, column 1 
+Trying to run the code..
+Line_1_did_not_match
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Your file did not match the expected ouput
+Here is what you printed
+max(42, -69) is -69
+max(33, 0) is 0
+max(0x123456, 123456) is 123456
+max(0x451215AF, 0X913591AF) is -1858760273
 
 Overall Grade: F
