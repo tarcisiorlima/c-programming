@@ -40,7 +40,7 @@ double  computation_retirement (retire_info situation, int startAge_aux, double 
   for (int i = 0; i < situation.months; i++)
     {
       convertedAge = age_month_conversion (startAge_aux);
-      printf ("Age %3d month %2d you have $%.21f\n", convertedAge.age_years, convertedAge.age_months, balance);
+      printf ("Age %3d month %2d you have $%.2f\n", convertedAge.age_years, convertedAge.age_months, balance);
       balance = balance + balance * situation.rate_of_return + situation.contribution;
       startAge_aux ++;
     }
