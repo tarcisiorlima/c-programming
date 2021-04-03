@@ -71,5 +71,5 @@ int main (void)
   double savings = 21345; //initial savings
 
   retirement (start_age, savings, working, retire);
- 
+  return 0; 
 }
