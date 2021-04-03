@@ -1,3 +1,4 @@
+
 //program to calculate the retirement savings
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +8,8 @@ struct _retire_info
   int months; //number of months it is applicable to
   double contribution; // how many dollars are contributed or spent if negative, from the account per month
   double  rate_of_return; // rate of returns after inflation
-}typedef  retire_info;
+};
+typedef struct _retire_info  retire_info;
 
 typedef struct
 {
@@ -44,7 +46,14 @@ double  computation_retirement (retire_info situation, int startAge_aux, double 
     }
   return balance;
 }
-  
+
+void retirement (int startAge, double initial, retire_info working, retire_info retired)
+{
+  initial = computation_retirement (working, startAge, initial);
+  startAge = 327 + working.months;
+  initial  = computation_retirement (retired, startAge, initial);
+}
+
 int main (void)
 {
   retire_info working;
@@ -61,8 +70,6 @@ int main (void)
   int start_age = 327; //in months
   double savings = 21345; //initial savings
 
-  savings = computation_retirement (working, start_age, savings);
-  start_age = 327 + working.months;
-  
-  savings = computation_retirement (retire, start_age, savings);
+  retirement (start_age, savings, working, retire);
+ 
 }
