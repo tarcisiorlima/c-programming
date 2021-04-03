@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct
+struct _retire_info
 {
   int months; //number of months it is applicable to
   double contribution; // how many dollars are contributed or spent if negative, from the account per month
   double  rate_of_return; // rate of returns after inflation
-} retire_info;
+}typedef  retire_info;
 
 typedef struct
 {
