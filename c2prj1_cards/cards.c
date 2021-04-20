@@ -185,15 +185,15 @@ card_t card_from_num(unsigned c) {
 	{
 	  temp.suit = SPADES;
 	}
-      if (i == 12)
+      if (i == 13)
 	{
 	  temp.suit = HEARTS;
 	}
-      if (i == 25)
+      if (i == 26)
 	{
 	  temp.suit = DIAMONDS;
 	}
-      if (i == 38)
+      if (i == 39)
 	{
 	  temp.suit = CLUBS;
 	}
