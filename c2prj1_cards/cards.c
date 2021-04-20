@@ -40,48 +40,59 @@ const char * ranking_to_string(hand_ranking_t r) {
 }
 char value_letter(card_t c){
   unsigned c_value = c.value;
-  if ((c_value >= 2) && (c_value <=10))
+  if ((c_value >= 2) && (c_value <10))
     {   
       c_value = c_value + 48;
     }
- else if (c_value == 10)
+ if (c_value == 10)
     {
-      c_value = 0;
+      c_value = 48;
     }
     
- else if ((c_value >= 11) && (c_value <= 14)) 
+ if ((c_value >= 11) && (c_value <= 14)) 
   {
     switch (c_value)
       {
        case 11:
-	 return 'J';
+	 c_value = 'J';
+	 break;
        case 12:
-	 return 'Q';
+	 c_value = 'Q';
+	 break;
        case 13:
-	 return 'K';
+	 c_value = 'K';
+	 break;
        case 14:
-	 return 'A';
+	 c_value =  'A';
+	 break;
+      default:
+	c_value = '!';
       }
   }
-  return '@';
+  return c_value;
 }
 
 char suit_letter(card_t c)
 {
+  char temp;
    switch(c.suit)
      {
      case 0:
-       return 's';
+       temp = 's';
+       break;
      case 1:
-       return 'h';
+       temp = 'h';
+       break;
      case 2:
-       return 'd';
+       temp = 'd';
+       break;
      case 3:
-       return 'c';
-     case 4:
+       temp = 'c';
+       break;
+     default:
        assert(0);
      }
-   return '@';
+   return temp;
 }
 
 void print_card(card_t c)
@@ -167,13 +178,12 @@ card_t card_from_num(unsigned c) {
   card_t temp;
   unsigned array_cards_value[52];
   unsigned array_cards_suit[52];
-  unsigned j;
+  unsigned j = 2;
   for (unsigned i = 0; i < 52; i++)
     {
       if (i == 0)
 	{
 	  temp.suit = SPADES;
-	  j = 2;
 	}
       if (i == 12)
 	{

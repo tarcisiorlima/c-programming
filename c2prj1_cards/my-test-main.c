@@ -19,4 +19,9 @@ int main(void) {
 
   testcard = card_from_num(47);
   printf("test func card_from_num 47 : card value %d, card suit %d\n", testcard.value, testcard.suit);
+
+  for(unsigned i = 0; i < 52; i++) {
+    card_t c = card_from_num(i);
+    print_card(c);
+  }
 }
