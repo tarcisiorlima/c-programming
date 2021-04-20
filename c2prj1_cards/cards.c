@@ -7,12 +7,11 @@
 void assert_card_valid(card_t c) {
   
     //checking if the card value is valid
-  assert(c.value >= 2);
-  assert(c.value <= VALUE_ACE);
+  assert((c.value >= 2) && (c.value <= VALUE_ACE));
 
   //checking if the card suit is valid
-  assert(c.suit >= SPADES);
-  assert(c.suit <= NUM_SUITS);
+  assert((c.suit >= SPADES) && (c.suit < NUM_SUITS)) ;
+ 
 }
 
 const char * ranking_to_string(hand_ranking_t r) {
